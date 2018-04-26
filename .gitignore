@@ -3,7 +3,6 @@
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
-!/Assets/
 /Assets/2DGamekit/*
 
 # Visual Studio cache directory
@@ -33,6 +32,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
-Assets/2DGamekit/Art/Sprites/AnimatedSprites/Enemies/SpitterAtlas.spriteatlas
-*.spriteatlas
-*.spriteatlas
+

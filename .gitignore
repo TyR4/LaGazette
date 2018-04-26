@@ -4,10 +4,7 @@
 /[Bb]uild/
 /[Bb]uilds/
 !/Assets/
-/Assets/*
 /Assets/2DGamekit/
-!/Assets/_core/
-!/Assets/_modules/
 
 # Visual Studio cache directory
 /.vs/

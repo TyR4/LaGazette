@@ -1,9 +1,10 @@
 ﻿using NUnit.Framework;
+using System;
 
-public class MoneyTest
+public class MoneyTests
 {
 
-    Money money;
+    protected Money money;
 
     [SetUp]
     public void BeforeEveryTest()
@@ -58,5 +59,12 @@ public class MoneyTest
     {
         Money sameMoney = new Money(10);
         Assert.AreEqual(money, sameMoney);
+    }
+
+    [Test]
+    public void Test_ThrowErrorOnNegativeAmountChanges()
+    {
+        Assert.Throws<ArgumentOutOfRangeException>(() => money.Increase(-10));
+        Assert.Throws<ArgumentOutOfRangeException>(() => money.Decrease(-10));
     }
 }

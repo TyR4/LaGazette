@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 public class Money
 {
@@ -9,17 +10,23 @@ public class Money
         Amount = amount;
     }
 
-    public Money() : this(0)
+    public Money()
     {
     }
 
     public void Increase(int amount)
     {
+        if (amount < 0)
+            throw new ArgumentOutOfRangeException("Cannot increase by negative amount");
+
         Amount += amount;
     }
 
     public void Decrease(int amount)
     {
+        if (amount < 0)
+            throw new ArgumentOutOfRangeException("Cannot decrease by negative amount");
+
         Amount -= amount;
         if (Amount < 0)
             Amount = 0;

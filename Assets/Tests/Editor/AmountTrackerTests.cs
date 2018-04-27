@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using System;
-using System.Diagnostics;
 
 public class AmountTrackerTests
 {

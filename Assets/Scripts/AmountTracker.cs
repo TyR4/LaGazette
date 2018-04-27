@@ -9,7 +9,8 @@ public class AmountTracker
     }
 
     public AmountTracker()
-    { }
+    {
+    }
 
     public float Amount { get; protected set; }
 

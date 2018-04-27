@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using System;
 
 public class MoneyTests
 {
@@ -28,7 +27,6 @@ public class MoneyTests
     [Test]
     public void Test_MoneyStringDisplaysLivre()
     {
-        Money money = new Money(10);
         Assert.AreEqual("10 LIVRES", money.ToString());
     }
 }

@@ -1,11 +1,8 @@
-﻿using System;
-
-public class Money : AmountTracker
+﻿public class Money : AmountTracker
 {
 
-    public Money(int amount)
+    public Money(int amount) : base(amount)
     {
-        Amount = amount;
     }
 
     public Money()

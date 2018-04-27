@@ -12,6 +12,7 @@ public class AmountTracker
     {
     }
 
+    public string UOM { get; protected set; }
     public float Amount { get; protected set; }
 
     public void Increase(float amount)
@@ -35,22 +36,27 @@ public class AmountTracker
     public override bool Equals(object obj)
     {
         var tracker = obj as AmountTracker;
-        return tracker != null &&
-               Amount == tracker.Amount;
+        return tracker != null && 
+                UOM == tracker.UOM && Amount == tracker.Amount;
     }
 
-    public static bool operator ==(AmountTracker money1, AmountTracker money2)
+    public static bool operator ==(AmountTracker tracker1, AmountTracker tracker2)
     {
-        return EqualityComparer<AmountTracker>.Default.Equals(money1, money2);
+        return EqualityComparer<AmountTracker>.Default.Equals(tracker1, tracker2);
     }
 
-    public static bool operator !=(AmountTracker money1, AmountTracker money2)
+    public static bool operator !=(AmountTracker tracker1, AmountTracker tracker2)
     {
-        return !(money1 == money2);
+        return !(tracker1 == tracker2);
     }
 
     public override int GetHashCode()
     {
         return -602769199 + Amount.GetHashCode();
+    }
+
+    public override string ToString()
+    {
+        return Amount + " " + UOM;
     }
 }

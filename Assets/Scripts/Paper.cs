@@ -3,10 +3,12 @@
 
     public Paper(int amount) : base(amount)
     {
+        this.UOM = "sheets";
     }
 
     public Paper()
     {
+        this.UOM = "sheets";
     }
 
     public void Use(int numberOfSheets)
@@ -17,10 +19,5 @@
     public void Gain(int numberOfSheets)
     {
         Increase(numberOfSheets);
-    }
-
-    public override string ToString()
-    {
-        return Amount + " sheets";
     }
 }

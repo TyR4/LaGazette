@@ -27,6 +27,6 @@ public class MoneyTests
     [Test]
     public void Test_MoneyStringDisplaysLivre()
     {
-        Assert.AreEqual("10 LIVRES", money.ToString());
+        Assert.AreEqual("10 LIVRE", money.ToString());
     }
 }

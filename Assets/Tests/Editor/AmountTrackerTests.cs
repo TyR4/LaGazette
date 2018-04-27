@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Diagnostics;
 
 public class AmountTrackerTests
 {
@@ -48,10 +49,11 @@ public class AmountTrackerTests
     }
 
     [Test]
-    public void Test_TrackersEqualIfHaveSameAmountAndClass()
+    public void Test_TrackersEqualIfHaveSameAmount()
     {
+        AmountTracker firstTracker = new AmountTracker(10);
         AmountTracker sameTracker = new AmountTracker(10);
-        Assert.AreEqual(tracker, sameTracker);
+        Assert.AreEqual(true, firstTracker.Equals(sameTracker));
     }
 
     [Test]
@@ -59,6 +61,22 @@ public class AmountTrackerTests
     {
         Assert.Throws<ArgumentOutOfRangeException>(() => tracker.Increase(-10));
         Assert.Throws<ArgumentOutOfRangeException>(() => tracker.Decrease(-10));
+    }
+
+    [Test]
+    public void Test_SubclassesHaveDifferentUnitsOfMeasure()
+    {
+        Money money = new Money();
+        Paper paper = new Paper();
+        Assert.AreNotEqual(money.UOM, paper.UOM);
+    }
+
+    [Test]
+    public void Test_SubclassesAreNotEqual()
+    {
+        Money money = new Money();
+        Paper paper = new Paper();
+        Assert.AreEqual(false, money == paper);
     }
 
 }

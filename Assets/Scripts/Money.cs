@@ -3,10 +3,12 @@
 
     public Money(int amount) : base(amount)
     {
+        this.UOM = "LIVRE";
     }
 
     public Money()
     {
+        this.UOM = "LIVRE";
     }
 
     public void Earn(float amount)
@@ -19,8 +21,4 @@
         Decrease(amount);
     }
 
-    public override string ToString()
-    {
-        return Amount + " LIVRES";
-    }
 }
